@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#000; color:#fc0;; }
+    #modalback, #modal { background:#421; color: #fc0; }
+    #playarea, #stats { background:#111; }
+    #bf{ background:#421; color:#fc0; left:13.5em; top:9em; }
+    #glass { background:#cff; color:#096; left:27em; top:9em; }
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 1; var mag = 0;
+    var next = "golf.html";
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $("#glass").click(function(){
+        $("#modalmsg").html("Wait a minute - that bigfoot is really a goose in a bigfoot costume! You can see the zipper!");
+        $("#bf span").html("Goose in Bigfoot Costume");
+        $(".mod").fadeIn("fast");
+        mag = 1;
+      })
+      
+      $("#bf").click(function(){
+        if (mag == 1) {
+          setGeese(0);
+          $("#next").fadeIn("fast");
+          $("#goose").fadeOut("fast");
+          $("#modalmsg").html("David Biedny proves the goose is too provincial to wear a bigfoot costume!");
+          $(this).fadeOut("fast");
+        } else {
+          $("#modalmsg").html("Oh goodness! It's bigfoot!");
+        }
+        $(".mod").fadeIn("fast");
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="bf" class="click quadwide eighttall"><span>Bigfoot</span></div>
+  <div id="glass" class="click single"><span>Magnifying Glass</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">5</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">Paranormal acitivities.</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">1</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

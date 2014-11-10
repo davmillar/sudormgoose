@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#99f; color:#339; }
+    #modalback, #modal { background:#f99; color: #33f; }
+    #playarea, #stats { background:#9f9; }
+    .duck{ position:absolute; background:#fc0; color:#421;  }
+    .goose { position: absolute; background:#c96; color:#000; }
+    #f1, #f2 { top:4.5em; }
+    #f3, #f4 { top:9em; }
+    #f5, #f6 { top:13.5em; }
+    #f7, #f8 { top:18em; }
+    #f3, #f5 { left:13.5em; }
+    #f1, #f7 { left:18em; }
+    #f2, #f8 { left:22.5em; }
+    #f4, #f6 { left:27em; }
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 8;
+    var next = "bigfoot.html";
+
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $(".duck").click(function(){
+        $(this).addClass("goose").removeClass("duck").children("span").html("Goose");
+        $(this).click(function(){
+          $(this).fadeOut("fast").removeClass("goose");
+          setGeese($(".goose").size() + $(".duck").size());
+          if (geese == 0) {
+            $("#next").fadeIn("fast");
+          }
+        })
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="f1" class="click single duck"><span>Duck</span></div>
+  <div id="f2" class="click single duck"><span>Duck</span></div>
+  <div id="f3" class="click single duck"><span>Duck</span></div>
+  <div id="f4" class="click single duck"><span>Duck</span></div>
+  <div id="f5" class="click single duck"><span>Duck</span></div>
+  <div id="f6" class="click single duck"><span>Duck</span></div>
+  <div id="f7" class="click single duck"><span>Duck</span></div>
+  <div id="f8" class="click single duck"><span>Duck</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">4</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">Duck, duck... goose!</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">8</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

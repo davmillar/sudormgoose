@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#050; color:#9f6; }
+    #modalback, #modal { background:#090; color: #fff; }
+    #playarea, #stats { background:#060; }
+    .green{ background:#070; color:#9f6; }
+    #gr1 { left:18em; top:9em; }
+    #gr2 { left:9em; top:4.5em; }
+    #gr3 { left:27em; top:9em; }
+    #goose { background:#fff; color:#050; left:22.5em; top:9em; }
+    #putt { background:#080; color:#9f6; left:4.5em; top:4.5em;}
+    #hole { background:#030; color:#fc0; left:36em; top:13.5em;}
+    #trap { background:#fc0; color:#000; left:18em; top:4.5em;}
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 1;
+    var next = "facebook.html";
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $("#putt").click(function(){
+        setGeese(0);
+        $("#next").fadeIn("fast");
+        $("#goose").fadeOut("fast");
+        $("#modalmsg").html("You putt and get a hole in one on the last hole! Free fountain drink, hooray! Plus the goose is gone!");
+        $(".mod").fadeIn("fast");
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="putt" class="click single putt"><span>Putt</span></div>
+  <div id="gr1" class="block quad green"><span>Green</span></div>
+  <div id="gr2" class="block quad green"><span>Green</span></div>
+  <div id="gr3" class="block quad green"><span>Green</span></div>
+  <div id="goose" class="block single"><span>Goose</span></div>
+  <div id="trap" class="block single"><span>Sand Trap</span></div>
+  <div id="hole" class="block single"><span>Hole</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">6</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">I Remember Dutch Village.</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">1</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

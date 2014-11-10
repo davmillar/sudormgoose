@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#000; color:#9c0; }
+    #modalback, #modal { background:#9c0; color: #000; }
+    #playarea, #stats { background:#120; }
+    #command { background:#000; color: #9c0; top:9em; left:18em; }
+      #command div { font-family: Courier, monospace; margin:0.5em; }
+    #go { top: 13.5em; left: 18em; }
+    #about { top: 13.5em; left:22.5em; }
+    .click { background:#9c0; color:#000;}
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 1;
+    var next = "mall.html";
+
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $("#go").click(function(){
+        if (geese == 1) {
+          $("#modalmsg").html("You executed the command and the goose was removed.");
+          $("#next").fadeIn("fast");
+          setGeese(0);
+        } else {
+          $("#modalmsg").html("You already removed the goose.");
+        }
+        $(".mod").fadeIn("fast");
+      })
+      
+      $("#about").click(function(){
+        $("#modalmsg").html("Created by David Millar<br/>&copy; 2008-2010<br/><br/>The objective of the game is to remove all the geese, for those of you unfamiliar with UNIX command line prompts.");
+        $(".mod").fadeIn("fast");
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="command" class="block double"><div>sudo rm goose</div></div>
+  <div id="go" class="click single"><div>Execute Command</div></div>
+  <div id="about" class="click single"><div>About</div></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">1</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">Welcome</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">1</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

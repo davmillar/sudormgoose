@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#050; color:#9f6; }
+    #modalback, #modal { background:#090; color: #fff; }
+    #playarea, #stats { background:#060; }
+    #hand { background:#c95; color:#333; left:13.5em; top:9em; }
+    #bush { background:#070; color:#9f6; left:22.5em; top:9em; }
+    #g1 { left:22.5em; top:13.5em; }
+    #g2 { left:27em; top:9em; }
+    .goose { background:#fff; color:#000; left:22.5em; top:9em; display:none; }
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 2;
+    var next = "index.html";
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $(".goose").click(function(){
+        geese--;
+        setGeese(geese);
+        if (geese == 0) { $("#next").fadeIn("fast"); }
+        $(this).fadeOut("fast");
+      })
+      
+      $("#hand").click(function(){
+        $("#modalmsg").html("A click of the hand makes birds in a bush?");
+        $(".mod").fadeIn("fast");
+        if (geese == 2) { $(".goose").fadeIn("fast");}
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="hand" class="click single putt"><span>Hand</span></div>
+  <div id="bush" class="block quad green"><span>Bush</span></div>
+  <div id="g1" class="click goose single"><span>Goose</span></div>
+  <div id="g2" class="click goose single"><span>Goose</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">8</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">How does that saying go?</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">2</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

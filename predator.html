@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#000; color:#f00;; }
+    #modalback, #modal { background:#090; color: #fff; }
+    #playarea, #stats { background:#111; }
+    #mud{ background:#421; color:#fc0; left:13.5em; top:9em; }
+    #goose { background:#952; color:#fff; left:27em; top:9em; }
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 1;
+    var next = "duck.html";
+    $(document).ready(function() {
+      setGeese(geese);
+      
+      $("#goose").click(function(){
+        $("#modalmsg").html("You can't hide behind the goose!");
+        $(".mod").fadeIn("fast");
+      })
+      
+      $("#mud").click(function(){
+        if (geese == 1) {
+          $("#next").fadeIn("fast");
+          $("#goose").fadeOut("fast");
+          setGeese(0);
+          $("#modalmsg").html("You jump in the mud pit. It makes your attacker lose your heat signature and it attacks the goose instead!");
+        } else {
+          $("#modalmsg").html("You wallow around in the mud just for fun.");
+        }
+        $(".mod").fadeIn("fast");
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="mud" class="click quad"><span>Mud Pile</span></div>
+  <div id="goose" class="click single"><span>Goose</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">3</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">Quick, Dutch, hide!</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">1</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>

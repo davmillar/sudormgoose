@@ -1,0 +1,29 @@
+*  { font-family: Helvetica, Arial, sans-serif; }
+
+body { font-size:16px; line-height:1.5em; }
+
+#modalback, #modal { position:absolute; cursor:pointer; left:50%; }
+#modalback { filter:alpha(opacity=50);-moz-opacity:.50;opacity:.50; top:1.5em; margin:0 0 0 -22.25em; width:44.5em; height:26.5em; }
+#modal { top:3.5em; margin:0 0 0 -20.25em; width:40.5em; height:22em;}
+  #modal div { margin:1em; }
+#playarea { position:absolute; top:1.5em; left:50%; margin:0 0 0 -22.25em; width:44.5em; height:26.5em; }
+#stats { position:absolute; top:28.5em; left:50%; margin:0 0 0 -22.25em; width:44.5em; height:4em; }
+#gc { left:31em; }
+#ln { left:4.5em; }
+#lv{ left:0; }
+#next{ left:35.5em; cursor:pointer; }
+
+.block { position:absolute; line-height:1em; }
+.click { position:absolute; cursor:pointer; line-height:1em; }
+  .block  *, .click  * { margin: 0.8em; font-size:0.6em; display:block; }
+
+.statitem { position: absolute; line-height:0.9em; top: 0; }
+.stathead { margin: 0.833em; font-size: 0.6em; }
+.statamt { margin: 0.333em; font-size: 1.5em; }
+
+.single { width:4em; height:4em; }
+.double { width:8.5em; height:4em; }
+.quad { width:8.5em; height:8.5em; }
+.quadwide, .twowide { width:8.5em; }
+.fourwide { width:17.5em; }
+.eighttall { height:17.5em; }

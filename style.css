@@ -1,0 +1,18 @@
+*{font-family:Arial;}
+body { background:#000; color:#eee;font-size:14px; line-height:1.5em;}
+
+#action, #info { position: absolute; margin: 0 0 0 -20.5em; left: 50%; background:#111;width: 41em;}
+	#action { top: .5em; height: 29em;}
+	#info{ top: 30em; height: 5em;}
+#ep{position:absolute;top:0em;left:6em;}
+#cnt{position:absolute;top:0em;left:0em;}
+#start{background:red;}
+
+.it,.ip{padding:0;background:#111;color:#eee;line-height:1em;}
+	.it{font-size:0.8em;margin:0.625em;text-transform:uppercase;font-weight:bold;letter-spacing:0.17em;}
+	.ip{font-size:2em;margin:0.25em;letter-spacing:0.05em;}
+.awide{width:5em;}
+.dwide{width:23em;}
+.atall{height:5em;}
+.click{cursor:pointer;}
+.click span{margin:0.714em;font-size:0.7em;text-transform:uppercase;font-weight:bold;letter-spacing:0.1em;}

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>sudo rm goose</title>
+  <link rel="stylesheet" href="./layout.css" type="text/css" id="layout" />
+  <style type="text/css">
+    body { background:#fff; color:#3b5998; }
+    #modalback, #modal { background:#fff; color: #3b5998; }
+    #playarea, #stats { background:#eceff6; }
+    .status { background:#f7f7f7; color:#333; height:4em; left:9em; }
+    #logo { width:44.5em; background:#3b5998; color:#eceff6; height:4em; }
+    #stat1 { top:4.5em; }
+    #stat2 { top:9em; }
+    #stat3 { top:13.5em; }
+    #block { background:#d4dae8; left:4.5em; top:9em; }
+    #goose { background:#000; color:#fff; left:4.5em; top:4.5em;}
+    #ad { background:#d4dae8; color:#333; left:31.5em; top:4.5em; }
+  </style>
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript">
+    var geese = 1;
+    var next = "wisdom.html";
+    $(document).ready(function() {
+      setGeese(geese);
+      $(".status").click(function(){
+        $("#modalmsg").html("Honk!");
+        $(".mod").fadeIn("fast");
+      })
+      $("#block").click(function(){
+        setGeese(0);
+        $("#next").fadeIn("fast");
+        $("#block").fadeOut("fast");
+        $("#modalmsg").html("You block the goose.");
+        $(".mod").fadeIn("fast");
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="playarea">
+  <div id="logo" class="block"><span>facebook</span></div>
+  <div id="goose" class="block single"><span>Goose</span></div>
+  <div id="stat1" class="click status fourwide"><span>Status Update</span></div>
+  <div id="stat2" class="click status fourwide"><span>Status Update</span></div>
+  <div id="stat3" class="click status fourwide"><span>Status Update</span></div>
+  <div id="block" class="click single"><span>Block User</span></div>
+  <div id="ad" class="block quad"><span>Ad</span></div>
+</div>
+<div id="stats">
+  <div class="statitem" id="lv"><div class="stathead">Level</div><div class="statamt">7</div></div>
+  <div class="statitem" id="ln"><div class="stathead">sudo rm goose</div><div class="statamt">At least it's not MySpace.</div></div>
+  <div class="statitem" id="gc"><div class="stathead">Geese</div><div class="statamt">1</div></div>
+  <div class="statitem" id="next"><div class="stathead">Next Level</div><div class="statamt">Go now!</div></div>
+</div>
+<div id="modalback" class="mod"></div>
+<div id="modal" class="mod"><div id="modalmsg">Text Here</div></div>
+</body>
+</html>
